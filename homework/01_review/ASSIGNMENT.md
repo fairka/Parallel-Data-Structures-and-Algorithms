@@ -18,11 +18,11 @@ _Actual Time:_ ?
 
 I hereby certify that the code included in this assignment is ENTIRELY my own original work, with the following exceptions:
 
-* Exception one
+* Ethan Jansen helped
 * Exception two
 
 ---
 
-_Digital Signature:_ ???
+_Digital Signature: Kaden Fairchild
 
 (Type name or include signature image)
