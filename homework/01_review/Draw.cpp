@@ -46,7 +46,7 @@ void Draw::drawLine(int row, int col, int row2, int col2, char character) {
     int smallR = (row <= row2) ? row : row2;
     int smallC = (col <= col2) ? col : col2;
     int bigR = (row >= row2) ? row : row2;
-    int bigC = (row >= row2) ? col : col2;
+    int bigC = (col >= col2) ? col : col2;
 
     for (int i = smallR; i <= bigR; i++) {
       for (int j = smallC; j <= bigC; j++) {
