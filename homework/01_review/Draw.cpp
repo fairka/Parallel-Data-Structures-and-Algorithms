@@ -7,10 +7,13 @@
  */
 
 #include "Draw.h"
+using namespace std;
 
 Draw::Draw() {}
 
-void Draw::drawPoint(int row, int col, char character) {}
+void Draw::drawPoint(int row, int col, char character) {
+    
+}
 
 void Draw::drawLine(int row, int col, int row2, int col2, char character) {}
 

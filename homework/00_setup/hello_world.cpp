@@ -3,10 +3,10 @@
  * HW00: Sample homework using Hello World!
  *
  * File Name:  hello_world.cpp
- * Name:       ?
+ * Name:       Kaden Fairchild
  * Course:     CPTR 242
- * Date:       ?
- * Time Taken: ?
+ * Date:       4/4/2021
+ * Time Taken: 5 Min
  *
  */
 

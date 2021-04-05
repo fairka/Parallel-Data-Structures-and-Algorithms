@@ -2,15 +2,15 @@
 
 ## Walla Walla University -- Department of Computer Science
 
-_Name:_ ?
+_Name:_ Kaden
 
 _Course:_ CPTR242
 
-_Assignment:_ ?
+_Assignment:_ 01
 
-_Date:_ ?
+_Date:_ 4/4/21
 
-_Estimated:_ ?
+_Estimated:_ 1 hr
 
 _Actual Time:_ ?
 
