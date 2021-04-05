@@ -50,7 +50,7 @@ void Draw::drawLine(int row, int col, int row2, int col2, char character) {
 
     for (int i = smallR; i <= bigR; i++) {
       for (int j = smallC; j <= bigC; j++) {
-        double point = vertex * (1 - row) - (j - col);
+        double point = vertex * (i - row) - (j - col);
         if (point < 0.5 && point > -0.2) {
           drawPoint(i, j, character);
         }
