@@ -27,6 +27,7 @@ void LinearSearch::Search(std::vector<ItemType> list, ItemType key,
       break;
     case EQUAL:
       location = i;
+      return;
       break;
     }
   }

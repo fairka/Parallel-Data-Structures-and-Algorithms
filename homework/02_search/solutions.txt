@@ -6,6 +6,6 @@ Linear search performed 1 comparisons.
 2 is not in list.
 Binary search performed 2 comparisons.
 17 was found at 2 in list.
-Linear search performed 4 comparisons.
+Linear search performed 3 comparisons.
 17 was found at 2 in list.
 Binary search performed 1 comparisons.
