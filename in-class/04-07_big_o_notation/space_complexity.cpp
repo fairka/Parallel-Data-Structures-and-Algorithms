@@ -7,6 +7,7 @@ void printMessage() {
     cout << "Hey there! " << i;
   }
 }
+//O(1)
 
 void collectNumbers() {
   int n;
@@ -16,6 +17,7 @@ void collectNumbers() {
     arr[i] = i;
   }
 }
+//O(n)
 
 int main() {
     

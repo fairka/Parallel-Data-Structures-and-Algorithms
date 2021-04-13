@@ -1,0 +1,11 @@
+InputTest
+list_micro.txt has loaded 5 items.
+[11, 13, 17, 19, 23]
+2 is not in list.
+Linear search performed 1 comparisons.
+2 is not in list.
+Binary search performed 2 comparisons.
+17 was found at 2 in list.
+Linear search performed 4 comparisons.
+17 was found at 2 in list.
+Binary search performed 1 comparisons.
