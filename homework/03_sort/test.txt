@@ -1,0 +1,16 @@
+LoadListFromFile list_micro.txt
+SelectionSort
+PrintList
+MakeEmpty
+LoadListFromFile list_micro.txt
+InsertionSort
+PrintList
+MakeEmpty
+LoadListFromFile list_micro.txt
+MergeSort
+PrintList
+MakeEmpty
+LoadListFromFile list_micro.txt
+QuickSort
+PrintList
+Quit

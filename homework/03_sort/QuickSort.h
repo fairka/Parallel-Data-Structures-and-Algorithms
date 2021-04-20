@@ -16,12 +16,15 @@
 class QuickSort {
 public:
   void sort(std::vector<ItemType> &list, int &comparisons, int &writes);
+  
   // Function: Quick Sort a vector for key and count the number of
   // comparisons and writes.
   // Pre:     List has been initialized.
   // Post:    The list is modified to be in sorted order,
   // comparisons has the number comparisons and writes made during the sort.
 private:
-  // TODO Add any necessary private functions
+    int Partition(std::vector<ItemType> &list, int &comparisons, int &writes, int startIndex,int endIndex);
+    void QuickSort1(std::vector<ItemType> &list,int &comparisons, int &writes, int startIndex, int endIndex);
+    
 };
 #endif // QUICK_SORT_H
