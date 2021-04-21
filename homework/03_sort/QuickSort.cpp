@@ -63,9 +63,7 @@ void QuickSort::QuickSort1(std::vector<ItemType> &list, int &comparisons,
 
 void QuickSort::sort(std::vector<ItemType> &list, int &comparisons,
                      int &writes) {
-  writes = 0;
-  comparisons = 0;
 
-      QuickSort1(list, comparisons, writes, 0, (list.size() - 1));
+  QuickSort1(list, comparisons, writes, 0, (list.size() - 1));
 }
 // TODO implement search
