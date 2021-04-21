@@ -26,12 +26,12 @@ int QuickSort::Partition(std::vector<ItemType> &list, int &comparisons,
 
     while (pivot.ComparedTo(list.at(low))) {
       comparisons++;
-      low = low + 1;
+      low = low - 1;
     }
 
     while (pivot.ComparedTo(list.at(high))) {
       comparisons++;
-      high = high - 1;
+      high = high + 1;
     }
 
     if (low >= high) {
