@@ -8,7 +8,7 @@ Insertion Sort performed 10 comparisons, 21 writes.
 [2, 6, 14, 19, 23, 51]
 List has been cleared 
 list_micro.txt has loaded 6 items.
-Merge Sort performed 11 comparisons, 32 writes.
+Merge Sort performed 11 comparisons, 36 writes.
 [2, 6, 14, 19, 23, 51]
 List has been cleared 
 list_micro.txt has loaded 6 items.

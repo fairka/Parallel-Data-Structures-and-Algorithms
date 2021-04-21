@@ -18,7 +18,7 @@ void MergeSort::Merge(std::vector<ItemType> &list, int &comparisons,
   int leftPos = leftFirst;
   int rightPos = leftLast + 1;
   comparisons = 0;
-  writes = 2;
+  writes = 0;
 
   // Add smallest element from left or right partition to merged numbers
   while (leftPos <= leftLast && rightPos <= rightLast) {
@@ -58,8 +58,9 @@ void MergeSort::Merge(std::vector<ItemType> &list, int &comparisons,
   // Copy merged numbers back to numbers
   for (mergePos = 0; mergePos < mergedSize; mergePos++) {
     list.at(leftFirst + mergePos) = mergedNumbers.at(mergePos);
-    writes ++;
+    writes +=2;
   }
+
 }
 
 void MergeSort::MergeSort1(std::vector<ItemType> &list, int &comparisons,
