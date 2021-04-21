@@ -4,7 +4,7 @@ Selection Sort performed 15 comparisons, 18 writes.
 [2, 6, 14, 19, 23, 51]
 List has been cleared 
 list_micro.txt has loaded 6 items.
-Insertion Sort performed 10 comparisons, 21 writes.
+Insertion Sort performed 12 comparisons, 21 writes.
 [2, 6, 14, 19, 23, 51]
 List has been cleared 
 list_micro.txt has loaded 6 items.
