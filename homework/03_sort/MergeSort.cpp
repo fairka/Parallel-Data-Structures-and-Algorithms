@@ -17,24 +17,24 @@ void MergeSort::Merge(std::vector<ItemType> &list, int &comparisons,
   int mergePos = 0;
   int leftPos = leftFirst;
   int rightPos = leftLast + 1;
-  comparisons = 1;
-  writes = 3;
+  comparisons = 0;
+  writes = 2;
 
   // Add smallest element from left or right partition to merged numbers
   while (leftPos <= leftLast && rightPos <= rightLast) {
-      
-    if (list.at(rightPos).ComparedTo(list.at(leftPos))) {
       comparisons++;
+    if (list.at(rightPos).ComparedTo(list.at(leftPos))) {
       mergedNumbers.at(mergePos) = list.at(leftPos);
       leftPos++;
       writes+=2;
     } else {
       mergedNumbers.at(mergePos) = list.at(rightPos);
-      writes+=2;
       rightPos++;
+      writes+=2;
     }
     mergePos++;
     writes+=2;
+    comparisons++;
   }
 
   // If left partition is not empty, add remaining elements to merged numbers
@@ -42,7 +42,7 @@ void MergeSort::Merge(std::vector<ItemType> &list, int &comparisons,
     mergedNumbers.at(mergePos) = list.at(leftPos);
     leftPos++;
     mergePos++;
-    writes += 3;
+    writes += 4;
     comparisons++;
   }
 
@@ -52,23 +52,23 @@ void MergeSort::Merge(std::vector<ItemType> &list, int &comparisons,
     rightPos++;
     mergePos++;
     comparisons++;
-    writes += 3;
+    writes += 4;
   }
 
   // Copy merged numbers back to numbers
   for (mergePos = 0; mergePos < mergedSize; mergePos++) {
     list.at(leftFirst + mergePos) = mergedNumbers.at(mergePos);
-    writes += 1;
-    comparisons++;
+    writes ++;
   }
 }
 
 void MergeSort::MergeSort1(std::vector<ItemType> &list, int &comparisons,
                            int &writes, int startIndex, int endIndex) {
+  
   if (startIndex < endIndex) {
     // Find the midpoint in the partition
     int mid = (startIndex + endIndex) / 2;
-
+    
     // Recursively sort left and right partitions
     MergeSort1(list, comparisons, writes, startIndex, mid);
     MergeSort1(list, comparisons, writes, mid + 1, endIndex);
