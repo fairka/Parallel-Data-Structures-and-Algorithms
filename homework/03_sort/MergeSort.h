@@ -23,9 +23,11 @@ public:
   // comparisons has the number comparisons and swaps made during the writes.
 
 private:
-  void Merge(std::vector<ItemType> &list, int &comparisons, int &writes, int leftFirst, int leftLast, int rightLast);
-  void MergeSort1(std::vector<ItemType> &list,int &comparisons, int &writes, int startIndex, int endIndex);
-  
+  void Merge(std::vector<ItemType> &list, int &comparisons, int &writes,
+             int leftFirst, int leftLast, int rightLast);
+  void MergeSort1(std::vector<ItemType> &list, int &comparisons, int &writes,
+                  int startIndex, int endIndex);
+
   // TODO Add any necessary private functions
 };
 #endif // MERGE_SORT_H

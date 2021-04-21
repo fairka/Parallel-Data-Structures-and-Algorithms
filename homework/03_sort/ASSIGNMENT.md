@@ -12,13 +12,13 @@ _Date:_ 4/18/2021
 
 _Estimated:_ 2 hr
 
-_Actual Time:_ ?
+_Actual Time:_ 5hr
 
 ---
 
 I hereby certify that the code included in this assignment is ENTIRELY my own original work, with the following exceptions:
 
-* Exception one
+* Ethan Jansen
 * Exception two
 
 ---
