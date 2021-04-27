@@ -3,8 +3,18 @@ Game Minecraft was inserted into the list.
 Game Tetris was inserted into the list.
 List has 2 items.
 PrintList: 
-  1. 
-
-  2. 
-
+  1. Tetris
+Tetris
+Wireless
+Puzzle, 
+6.500000
+  2. Minecraft
+Minecraft
+PC
+Action, 
+9.000000
 List was visualized.
+Minecraft is deleted.
+Tetris is deleted.
+PrintList: 
+  ** List is empty.

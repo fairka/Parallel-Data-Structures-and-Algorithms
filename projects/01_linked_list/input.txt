@@ -3,5 +3,5 @@ PutGame Tetris
 GetLength
 PrintList
 Visualize
-GetGame Minecraft
+PrintList
 Quit
