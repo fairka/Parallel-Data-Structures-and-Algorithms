@@ -1,0 +1,7 @@
+PutGame Minecraft
+PutGame Tetris
+GetLength
+PrintList
+Visualize
+GetGame Minecraft
+Quit

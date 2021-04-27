@@ -1,0 +1,10 @@
+Student Test
+Game Minecraft was inserted into the list.
+Game Tetris was inserted into the list.
+List has 2 items.
+PrintList: 
+  1. 
+
+  2. 
+
+List was visualized.

@@ -42,6 +42,7 @@ public:
       else {
          tail->next = newNode;
          tail = newNode;
+         tail->next = head;
       }
    }
    
@@ -53,6 +54,7 @@ public:
       else {
          newNode->next = head;
          head = newNode;
+         tail->next=head;
       }
    }
    
@@ -63,7 +65,7 @@ public:
           printStream << node->data;
           node = node->next;
       }
-      while (node) {
+      while (node && tail->next !=head) {
          printStream << separator << node->data;
          node = node->next;
       }
@@ -79,6 +81,7 @@ public:
       else if (currentNode == tail) {
          tail->next = newNode;
          tail = newNode;
+         tail->next = head;
       }
       else {
          newNode->next = currentNode->next;
@@ -102,6 +105,7 @@ public:
          Node* nodeBeingRemoved = currentNode->next;
          Node* succeedingNode = currentNode->next->next;
          currentNode->next = succeedingNode;
+         tail->next=head;
          delete nodeBeingRemoved;
          if (succeedingNode == nullptr) {
             // Remove tail

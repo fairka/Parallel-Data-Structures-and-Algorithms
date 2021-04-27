@@ -9,6 +9,7 @@
 #include <string>
 
 using namespace bridges;
+using namespace std;
 
 #ifndef BRIDGES_USER_H
 #define BRIDGES_USER_H
@@ -22,8 +23,8 @@ private:
 public:
   BridgesUser() {
     BridgesNumber = 2421;
-    BridgesUserID = "";
-    BridgesAPIKey = "";
+    BridgesUserID = "fairka";
+    BridgesAPIKey = "137909871656";
   }
   unsigned int getBridgesNumber() const { return BridgesNumber; }
   string getBridgesUserID() const { return BridgesUserID; }

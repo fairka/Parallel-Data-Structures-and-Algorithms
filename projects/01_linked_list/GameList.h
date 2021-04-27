@@ -12,6 +12,7 @@
 #include "DataSource.h"
 #include "SLelement.h"
 #include <string>
+#include <Color.h>
 
 using namespace bridges;
 
