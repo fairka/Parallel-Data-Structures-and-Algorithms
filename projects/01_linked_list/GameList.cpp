@@ -147,6 +147,7 @@ void GameList::DeleteGame(std::string title) {
 
 void GameList::ResetList() {
   // TODO Add code here.
+  listData->getHead() = currentPos;
 }
 
 void GameList::GetNextGame(std::string &title, std::string &gameDetails) {
