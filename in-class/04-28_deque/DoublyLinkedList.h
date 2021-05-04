@@ -14,6 +14,7 @@ public:
       next = nullptr;
       previous = nullptr;
    }
+
 };
 
 class LinkedList {
@@ -112,6 +113,12 @@ public:
       }
       
       delete currentNode;
+   }
+   Node* getHead() {
+       return head;
+   }
+   Node* getTail() {
+       return tail;
    }
 };
 

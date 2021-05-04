@@ -1,0 +1,7 @@
+Enqueue Z
+Print
+ReplaceItem Q T
+Print
+ReplaceItem Z M
+Print
+Quit

@@ -1,0 +1,8 @@
+Student Test
+Z is enqueued.
+PrintQueue: Z 
+Q was replaced with T
+PrintQueue: Z 
+Z was replaced with M
+PrintQueue: M 
+Testing completed.
