@@ -47,5 +47,40 @@ int main() {
   cout << endl << "Print directed graph details" << endl;
   printGraph(graph2);
 
+  Graph graph3;
+
+  Vertex *vertexA3 = graph3.AddVertex("A");
+  Vertex *vertexB3 = graph3.AddVertex("B");
+  Vertex *vertexC3 = graph3.AddVertex("C");
+  Vertex *vertexD3 = graph3.AddVertex("D");
+
+  graph3.AddUndirectedEdge(vertexA3, vertexB3);
+  graph3.AddUndirectedEdge(vertexA3, vertexD3);
+  graph3.AddUndirectedEdge(vertexB3, vertexC3);
+  graph3.AddUndirectedEdge(vertexB3, vertexD3);
+
+  cout << endl << "Print graph3" << endl;
+  printGraph(graph3);
+
+Graph graph4;
+
+  Vertex *vertex1 = graph4.AddVertex("1");
+  Vertex *vertex3 = graph4.AddVertex("3");
+  Vertex *vertex5 = graph4.AddVertex("5");
+  Vertex *vertex7 = graph4.AddVertex("7");
+  Vertex *vertex9 = graph4.AddVertex("9");
+  Vertex *vertex11 = graph4.AddVertex("11");
+
+  graph4.AddDirectedEdge(vertex1, vertex3);
+  graph4.AddDirectedEdge(vertex3, vertex1);
+  graph4.AddDirectedEdge(vertex11, vertex1);
+  graph4.AddDirectedEdge(vertex9, vertex1);
+  graph4.AddDirectedEdge(vertex9, vertex9);
+  graph4.AddDirectedEdge(vertex5, vertex9);
+  graph4.AddDirectedEdge(vertex5, vertex7);
+
+  cout << endl << "Print Graph4"<< endl;
+  printGraph(graph4);
+
   return 0;
 }
