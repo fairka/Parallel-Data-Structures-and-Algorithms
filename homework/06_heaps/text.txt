@@ -1,0 +1,6 @@
+IsEmpty
+Enqueue 5
+EnqueueIterative 7
+Dequeue
+DequeueIterative
+Quit
