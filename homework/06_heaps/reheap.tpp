@@ -14,8 +14,8 @@ using namespace std;
 
 template <class ItemType>
 void HeapType<ItemType>::ReheapDownIterative(int root, int bottom) {
-    // TODO Implement a Iterative ReheapDown Function.
-    int maxChild;
+  // TODO Implement a Iterative ReheapDown Function.
+  int maxChild;
   int rightChild;
   int leftChild;
 
@@ -37,12 +37,11 @@ void HeapType<ItemType>::ReheapDownIterative(int root, int bottom) {
     }
   }
 }
-    
 
 template <class ItemType>
 void HeapType<ItemType>::ReheapUpIterative(int root, int bottom) {
-    // TODO Implement a Iterative ReheapUp Function.
-    int parent;
+  // TODO Implement a Iterative ReheapUp Function.
+  int parent;
 
   if (bottom > root) {
     parent = (bottom - 1) / 2;
@@ -52,6 +51,3 @@ void HeapType<ItemType>::ReheapUpIterative(int root, int bottom) {
     }
   }
 }
-
-
-
