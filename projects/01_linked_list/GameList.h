@@ -4,7 +4,7 @@
  *
  * File Name: GameList.h
  * Course:    CPTR 242
- * Date:      April 7, 2019
+ * Date:      April 18, 2021
  */
 
 #include "Array.h"
@@ -13,8 +13,6 @@
 #include "SLelement.h"
 #include <string>
 #include <Color.h>
-
-using namespace bridges;
 
 #ifndef GAME_LIST_H
 #define GAME_LIST_H
@@ -79,15 +77,15 @@ public:
   // Post: Current position is updated to next position.
   //       item is a copy of element at current position.
 
-  SLelement<std::string> *GetHead();
+  bridges::SLelement<std::string> *GetHead();
   // Function: Returns the pointer to the beginning of the list.
   // Pre:  List has been initialized.
   // Post: List pointer is returned.
 
 private:
-  SLelement<std::string> *listData;
+  bridges::SLelement<std::string> *listData;
   int length;
-  SLelement<std::string> *currentPos;
+  bridges::SLelement<std::string> *currentPos;
 };
 
 #endif // GAME_LIST_H

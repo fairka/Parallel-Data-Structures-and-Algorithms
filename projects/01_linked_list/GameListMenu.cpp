@@ -35,8 +35,7 @@ void PrintList(std::ostream &dataFile, GameList &list) {
     for (int counter = 1; counter <= length; counter++) {
       std::string gameTitle, gameDetails;
       list.GetNextGame(gameTitle, gameDetails);
-      dataFile << "  " << counter << ". " << gameTitle << "\n"
-               << gameDetails << std::endl;
+      dataFile << "  " << counter << ". " << gameTitle << std::endl;
     }
   }
 }
@@ -68,27 +67,31 @@ void GameListMenu(std::istream &inStream, std::ostream &outStream,
       "Here the data is processed to be a list of Game Titles "
       "with all Game Details.");
 
-  // get the actor movie IMDB data
+  // get the Game IGN Game Collection (Meta Data)
   DataSource ds(&bridges);
-  vector<Game> am_game = ds.getGameData();
+  vector<Game> am_game;
+  try {
+    am_game = ds.getGameData();
+  } catch (string ex) {
+    std::cout << ex << std::endl;
+  }
 
-  //  Actors or movies can repeat in the actor-movie pairs; so we will process
-  //  the list of actor-movie pairs so that we get a list of actors with all the
-  //  movies they have been in. We will use a map for this
+  //  Game Titles can repeat in the GameTitle-GameDetails pairs; so we will
+  //  process the list of GameTitle-GameDetails pairs so that we get a list of
+  //  GameTitles with all the GameDetails (Title, Platform, Genre, Rating). We
+  //  will use a map for this
   unordered_map<std::string, am_obj> am_map;
   int max_gameDetails = 0;
   for (auto im : am_game) {
-    if (im.getTitle().find("Xtreme") == std::string::npos) {
-      std::string gameDetail = im.getPlatformType() + "\n";
-      for (std::string genre : im.getGameGenre()) {
-        gameDetail += genre + ", ";
-      }
-      gameDetail += "\n";
-      gameDetail += std::to_string(im.getRating());
-
-      am_obj amo = {gameDetail, im.getRating()};
-      am_map[im.getTitle()] = amo;
+    std::string gameDetail = im.getTitle() + "\n" + im.getPlatformType() + "\n";
+    for (std::string genre : im.getGameGenre()) {
+      gameDetail += genre + ", ";
     }
+    gameDetail += "\n";
+    gameDetail += std::to_string(im.getRating());
+
+    am_obj amo = {gameDetail, im.getRating()};
+    am_map[im.getTitle()] = amo;
   }
 
   // Test driver menu and options
@@ -159,9 +162,10 @@ void GameListMenu(std::istream &inStream, std::ostream &outStream,
         }
       }
     } else if (option == "DeleteGame") {
-      inStream >> gameTitle;
+      std::getline(inStream >> std::ws, gameTitle);
       list.DeleteGame(gameTitle);
       outStream << gameTitle << " is deleted." << std::endl;
+
     } else if (option == "ResetList") {
       list.ResetList();
       outStream << "List was reset." << std::endl;
@@ -200,5 +204,6 @@ void GameListMenu(std::istream &inStream, std::ostream &outStream,
     inStream >> option;
   };
 
+  outStream << "Test Complete." << std::endl;
   std::cout << "Quit" << endl << "Testing completed." << std::endl;
 }

@@ -4,13 +4,14 @@ BRIDGES_LDFLAGS = -L/usr/local/submitty/bridges/curl/lib
 BRIDGES_CXXFLAGS = -I. -I/usr/local/submitty/bridges/curl/include -I/usr/local/submitty/bridges/bridges/include
 
 ifneq ("$(wildcard GameListDriver.cpp)","")
-	# Code.CS settings
+	# Code.CS student settings (put student driver filename)
 	SRCS = GameList.cpp GameListMenu.cpp GameListDriver.cpp
 	EXE = GameList.out
 	BRIDGES_LDFLAGS = -L../../include/curl/lib
 	BRIDGES_CXXFLAGS = -I. -I../../include/curl/include -I../../include/bridges/include
-else ifneq ("$(wildcard ImdbList.cpp)","")
-	# Submitty setting -- no changes
+else ifneq ("$(wildcard GameList.cpp)","")
+	# Submitty submission (put one of the student submission filenames)
+    # Do nothing. Leave defaults.
 else
 	# Homework library settings
 	SRCS = ../GameList.cpp GameListMenu.cpp submitty_driver.cpp
