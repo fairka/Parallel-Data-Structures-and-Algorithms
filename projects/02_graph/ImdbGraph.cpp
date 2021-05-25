@@ -35,7 +35,7 @@ ImdbGraph::~ImdbGraph() {}
 // Post: The actor or movie will be added as a vertex.
 //          No duplicate vertics will be created.
 void ImdbGraph::AddVertex(string actorOrMovie) {
-  // TODO Add code here.
+  graph.addVertex(actorOrMovie);
 }
 
 // Function: Adds a edge to the graph.
@@ -45,23 +45,33 @@ void ImdbGraph::AddVertex(string actorOrMovie) {
 //          No duplicate edges will be created.
 void ImdbGraph::AddEdge(string actorOrMovie, string movieOrActor) {
   // TODO Add code here.
+  graph.addEdge(actorOrMovie, movieOrActor, "1");
+  graph.addEdge(movieOrActor, actorOrMovie, "1");
 }
 
 // Function: Updates the visualization for to vertex.
 // Pre:  Graph has been initialized.
 //          Vertex is in the graph.
 // Post: The vertex will display the new color.
-void ImdbGraph::VisualizeVertex(string actorOrMovie, string color) {
+void ImdbGraph::setVertexColor(string actorOrMovie, string color) {
   // TODO Add code here.
+   graph.getVisualizer(actorOrMovie)->setColor(color);
+   graph.getVisualizer(actorOrMovie)->setSize(50.0);
+   graph.getVisualizer(actorOrMovie)->setOpacity(1.);
+   graph.getVisualizer(actorOrMovie)->setShape(DIAMOND);
 }
 
 // Function: Updates the visualization for to edge.
 // Pre:  Graph has been initialized.
 //          Edge is in the graph.
 // Post: The edge will display the new color.
-void ImdbGraph::VisualizeEdge(string actorOrMovie, string movieOrActor2,
+void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
                               string color) {
   // TODO Add code here.
+  graph.getLinkVisualizer(actorOrMovie,movieOrActor2)->setColor(color);
+  graph.getLinkVisualizer(movieOrActor2,actorOrMovie)->setColor(color);
+  graph.getLinkVisualizer(actorOrMovie,movieOrActor2)->setThickness(10.0);
+  graph.getLinkVisualizer(movieOrActor2,actorOrMovie)->setThickness(10.0);
 }
 
 // Function: Resets all visualizations to the default.
@@ -69,6 +79,8 @@ void ImdbGraph::VisualizeEdge(string actorOrMovie, string movieOrActor2,
 // Post: The vertics and edges will display the default color.
 void ImdbGraph::ResetVisualizer() {
   // TODO Add code here.
+  graph.getVisualizer(getVertices())->setColor("#0000007f");
+  graph.getLinkVisualizer(getVertices())->setColor("#87cefaff");
 }
 
 // Function: Calculates the Bacon Number for two actors.

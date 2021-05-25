@@ -21,8 +21,8 @@ private:
 public:
   BridgesUser() {
     BridgesNumber = 2422;
-    BridgesUserID = "";
-    BridgesAPIKey = "";
+    BridgesUserID = "fairka";
+    BridgesAPIKey = "137909871656";
   }
   unsigned int getBridgesNumber() const { return BridgesNumber; }
   std::string getBridgesUserID() const { return BridgesUserID; }
