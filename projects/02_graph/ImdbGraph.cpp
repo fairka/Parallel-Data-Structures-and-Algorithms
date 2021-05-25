@@ -55,10 +55,10 @@ void ImdbGraph::AddEdge(string actorOrMovie, string movieOrActor) {
 // Post: The vertex will display the new color.
 void ImdbGraph::setVertexColor(string actorOrMovie, string color) {
   // TODO Add code here.
-   graph.getVisualizer(actorOrMovie)->setColor(color);
-   graph.getVisualizer(actorOrMovie)->setSize(50.0);
-   graph.getVisualizer(actorOrMovie)->setOpacity(1.);
-   graph.getVisualizer(actorOrMovie)->setShape(DIAMOND);
+  graph.getVisualizer(actorOrMovie)->setColor(color);
+  graph.getVisualizer(actorOrMovie)->setSize(50.0);
+  graph.getVisualizer(actorOrMovie)->setOpacity(1.);
+  graph.getVisualizer(actorOrMovie)->setShape(DIAMOND);
 }
 
 // Function: Updates the visualization for to edge.
@@ -66,12 +66,12 @@ void ImdbGraph::setVertexColor(string actorOrMovie, string color) {
 //          Edge is in the graph.
 // Post: The edge will display the new color.
 void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
-                              string color) {
+                             string color) {
   // TODO Add code here.
-  graph.getLinkVisualizer(actorOrMovie,movieOrActor2)->setColor(color);
-  graph.getLinkVisualizer(movieOrActor2,actorOrMovie)->setColor(color);
-  graph.getLinkVisualizer(actorOrMovie,movieOrActor2)->setThickness(10.0);
-  graph.getLinkVisualizer(movieOrActor2,actorOrMovie)->setThickness(10.0);
+  graph.getLinkVisualizer(actorOrMovie, movieOrActor2)->setColor(color);
+  graph.getLinkVisualizer(movieOrActor2, actorOrMovie)->setColor(color);
+  graph.getLinkVisualizer(actorOrMovie, movieOrActor2)->setThickness(10.0);
+  graph.getLinkVisualizer(movieOrActor2, actorOrMovie)->setThickness(10.0);
 }
 
 // Function: Resets all visualizations to the default.
@@ -79,8 +79,6 @@ void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
 // Post: The vertics and edges will display the default color.
 void ImdbGraph::ResetVisualizer() {
   // TODO Add code here.
-//   graph.getVisualizer(getVertices())->setColor("#0000007f");
-//   graph.getLinkVisualizer(getVertices())->setColor("#87cefaff");
 }
 
 // Function: Calculates the Bacon Number for two actors.
@@ -95,7 +93,6 @@ void ImdbGraph::ResetVisualizer() {
 //          The graph will visually show the path to connect the actors.
 int ImdbGraph::GetBaconNumber(string sourceActor, string destinationActor) {
   // TODO Add code here.
-    
-  
+
   return -1;
 }
