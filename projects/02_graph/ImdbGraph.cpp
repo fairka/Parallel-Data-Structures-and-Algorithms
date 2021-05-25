@@ -79,8 +79,8 @@ void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
 // Post: The vertics and edges will display the default color.
 void ImdbGraph::ResetVisualizer() {
   // TODO Add code here.
-  graph.getVisualizer(getVertices())->setColor("#0000007f");
-  graph.getLinkVisualizer(getVertices())->setColor("#87cefaff");
+//   graph.getVisualizer(getVertices())->setColor("#0000007f");
+//   graph.getLinkVisualizer(getVertices())->setColor("#87cefaff");
 }
 
 // Function: Calculates the Bacon Number for two actors.
@@ -95,5 +95,7 @@ void ImdbGraph::ResetVisualizer() {
 //          The graph will visually show the path to connect the actors.
 int ImdbGraph::GetBaconNumber(string sourceActor, string destinationActor) {
   // TODO Add code here.
+    
+  
   return -1;
 }
