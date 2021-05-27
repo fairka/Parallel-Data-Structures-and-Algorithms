@@ -112,7 +112,7 @@ int ImdbGraph::GetBaconNumber(string sourceActor, string destinationActor) {
       search = true;
       break;
     }
-    //all find adjacent actors
+    // all find adjacent actors
     auto adjList = graph.getAdjacencyList(src);
     for (auto edge = adjList; edge != nullptr; edge = edge->getNext()) {
       auto destination = edge->getValue().to();
@@ -122,7 +122,7 @@ int ImdbGraph::GetBaconNumber(string sourceActor, string destinationActor) {
       }
     }
   }
-  //get bacon number and change visualizer
+  // get bacon number and change visualizer
   if (search) {
     string curr = destinationActor;
     setVertexColor(curr, "#90ee90");
