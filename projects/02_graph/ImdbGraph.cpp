@@ -79,8 +79,8 @@ void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
 // Post: The vertics and edges will display the default color.
 void ImdbGraph::ResetVisualizer() {
   // TODO Add code here.
-  for(string key : graph.keySet()){
-      for(Edge string edge : graph.outgoingEdgeSetOf(key)) {
+  for(std::string key : graph.keySet()){
+      for(Edge<std::string> edge : graph.outgoingEdgeSetOf(key)) {
           edge.setColor("#4682b4");
       }
       graph.getVisualizer(key)->setColor("#4682b4");
