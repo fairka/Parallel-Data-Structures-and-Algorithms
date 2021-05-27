@@ -79,11 +79,11 @@ void ImdbGraph::setEdgeColor(string actorOrMovie, string movieOrActor2,
 // Post: The vertics and edges will display the default color.
 void ImdbGraph::ResetVisualizer() {
   // TODO Add code here.
-  for(std::string key : graph.keySet()){
-      for(Edge<std::string> edge : graph.outgoingEdgeSetOf(key)) {
-          edge.setColor("#4682b4");
-      }
-      graph.getVisualizer(key)->setColor("#4682b4");
+  for (std::string key : graph.keySet()) {
+    for (Edge<std::string> edge : graph.outgoingEdgeSetOf(key)) {
+      edge.setColor("#4682b4");
+    }
+    graph.getVisualizer(key)->setColor("#4682b4");
   }
 }
 
@@ -99,6 +99,43 @@ void ImdbGraph::ResetVisualizer() {
 //          The graph will visually show the path to connect the actors.
 int ImdbGraph::GetBaconNumber(string sourceActor, string destinationActor) {
   // TODO Add code here.
+  int baconNumber = 0;
+  bool search = false;
+  queue<string> Check;
+  map<string, string> parent;
+  Check.push(sourceActor);
 
+  while (!Check.empty()) {
+    string src = Check.front();
+    Check.pop();
+    if (src == destinationActor) {
+      search = true;
+      break;
+    }
+    //all find adjacent actors
+    auto adjList = graph.getAdjacencyList(src);
+    for (auto edge = adjList; edge != nullptr; edge = edge->getNext()) {
+      auto destination = edge->getValue().to();
+      if (parent.count(destination) == 0) {
+        parent.emplace(destination, src);
+        Check.push(destination);
+      }
+    }
+  }
+  //get bacon number and change visualizer
+  if (search) {
+    string curr = destinationActor;
+    setVertexColor(curr, "#90ee90");
+    while (curr != sourceActor) {
+      string node = parent.at(curr);
+      LinkVisualizer *edge = graph.getLinkVisualizer(node, curr);
+      setEdgeColor(node, curr, "#90ee90");
+      setVertexColor(node, "#90ee90");
+      baconNumber++;
+      curr = node;
+    }
+    setVertexColor(sourceActor, "#90ee90");
+    return baconNumber / 2;
+  }
   return -1;
 }
