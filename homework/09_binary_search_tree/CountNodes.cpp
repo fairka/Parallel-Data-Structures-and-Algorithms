@@ -11,25 +11,27 @@
  */
 #include "TreeType.h"
 
+int recursiveLeafCount(TreeNode *node);
+int recursiveSingleCount(TreeNode *node);
+int recursiveGreaterCount(TreeNode *node, ItemType value);
+
 // Post: Number of leaf nodes in the tree is returned.
-// Calls recursive function to count the number of leaf nodes.
+// Calls recursive function to count the number of leaf nodes
+int recursiveLeafCount(TreeNode *node) {
+  if (node == NULL) {
+    return 0;
+  }
+  if (node->left == NULL && node->right == NULL) {
+    return 1;
+  } else {
+    return recursiveLeafCount(node->left) + recursiveLeafCount(node->right);
+  }
+}
+
 int TreeType::CountLeaves() {
   // TODO Implement function
 
-  if (root == NULL) {
-    return 0;
-  }
-  if (root->left == NULL && root->right == NULL) {
-    return 1;
-  }
-  if(root->left != NULL){
-      root = root->left;
-      return CountLeaves();
-  } else if(root->right != NULL){
-      root = root ->right;
-      return CountLeaves();
-  }
-  return CountLeaves();
+  return recursiveLeafCount(root);
 }
 
 // Calls recursive function SingleCount to count the number of
