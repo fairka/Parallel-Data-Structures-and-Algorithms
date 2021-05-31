@@ -15,7 +15,14 @@
 // Calls recursive function to count the number of leaf nodes.
 int TreeType::CountLeaves() {
   // TODO Implement function
+  
+  if (root== NULL){
   return 0;
+  } 
+  if(root->left == NULL  && root->right == NULL){
+     return 1;
+}
+return TreeType::CountLeaves() + CountLeaves();
 }
 
 // Calls recursive function SingleCount to count the number of

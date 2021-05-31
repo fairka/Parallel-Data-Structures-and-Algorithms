@@ -1,0 +1,10 @@
+PutItem D
+PutItem Q
+PutItem C
+PutItem Z
+GetLength
+PrintTree
+GetItem Z
+MakeEmpty
+PrintTree
+Quit
