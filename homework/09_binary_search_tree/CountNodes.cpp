@@ -22,7 +22,13 @@ int TreeType::CountLeaves() {
   if (root->left == NULL && root->right == NULL) {
     return 1;
   }
-  root = root->left;
+  if(root->left != NULL){
+      root = root->left;
+      return CountLeaves();
+  } else if(root->right != NULL){
+      root = root ->right;
+      return CountLeaves();
+  }
   return CountLeaves();
 }
 
