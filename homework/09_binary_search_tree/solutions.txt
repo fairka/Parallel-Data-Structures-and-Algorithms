@@ -1,0 +1,11 @@
+Student Test
+D is inserted
+Q is inserted
+C is inserted
+Z is inserted
+Number of nodes is 4
+CDQZ
+Z found in list.
+Tree has been made empty.
+Binary Tree is empty.
+Testing completed.

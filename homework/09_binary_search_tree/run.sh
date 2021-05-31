@@ -1,4 +1,4 @@
 make clean
 make
-./Tree.out < text.txt
+./Tree.out < input.txt
 cat solutions.txt
