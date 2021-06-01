@@ -51,10 +51,10 @@ int recursiveGreaterCount(TreeNode *node, ItemType value) {
     return 0;
   }
 
-  int countLeft = recursiveGreaterCount(node->left, value);
-  int countRight = recursiveGreaterCount(node->right, value);
+  int leftCount = recursiveGreaterCount(node->left, value);
+  int rightCount = recursiveGreaterCount(node->right, value);
 
-  return (node->info > value ? 1 : 0) + countLeft + countRight;
+  return (node->info > value ? 1 : 0) + leftCount + rightCount;
 }
 
 // Pre:  tree has been initialized.

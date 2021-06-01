@@ -12,13 +12,13 @@ _Date:_ 5/31/2021
 
 _Estimated:_ 2 hr
 
-_Actual Time:_ ?
+_Actual Time:_ 2 hr
 
 ---
 
 I hereby certify that the code included in this assignment is ENTIRELY my own original work, with the following exceptions:
 
-* Exception one
+* https://stackoverflow.com/questions/37736391/find-the-number-of-nodes-in-a-binary-tree-greater-than-x
 * Exception two
 
 ---
