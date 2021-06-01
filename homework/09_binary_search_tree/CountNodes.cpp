@@ -35,21 +35,20 @@ int TreeType::CountLeaves() {
 }
 
 int recursiveSingleCount(TreeNode *node) {
-  if (node == NULL)
+  if (node == NULL) {
     return 0;
+  }
+
+  int res = 0;
 
   // Condition to check if the
   // node is having only one child
   if (node->left != NULL && node->right == NULL ||
       node->left == NULL && node->right != NULL) {
-    return 1;
+    res++;
   }
-
-  // Traversing the left child
-  return recursiveSingleCount(node->left);
-
-  // Traversing the right child
-  return recursiveSingleCount(node->right);
+  res += recursiveSingleCount(node->left) + recursiveSingleCount(node->right);
+  return res;
 }
 
 // Calls recursive function SingleCount to count the number of
