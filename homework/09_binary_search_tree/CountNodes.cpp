@@ -52,12 +52,16 @@ int recursiveGreaterCount(TreeNode *node, ItemType value) {
   }
 
   int count = 0;
-  if (node->left->info > value && node->right->info < value ||
-      node->left->info < value && node->right->info > value) {
+  if (node->info > value) {
     count++;
   }
-  count += recursiveGreaterCount(node->left, value) +
-           recursiveGreaterCount(node->right, value);
+
+  int size = recursiveLeafCount(node);
+
+  for (int i = 0; i < size; i++) {
+    TreeNode *greater = node->right;
+    count += recursiveGreaterCount(greater, value);
+  }
   return count;
 }
 // Pre:  tree has been initialized.
