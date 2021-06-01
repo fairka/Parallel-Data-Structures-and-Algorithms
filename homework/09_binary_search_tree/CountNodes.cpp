@@ -59,7 +59,7 @@ int recursiveGreaterCount(TreeNode *node, ItemType value) {
   int size = recursiveLeafCount(node);
 
   for (int i = 0; i < size; i++) {
-    TreeNode *greater = node->right;
+    TreeNode *greater = node;
     count += recursiveGreaterCount(greater, value);
   }
   return count;
