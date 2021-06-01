@@ -68,10 +68,3 @@ int TreeType::CountGreaterThan(ItemType value) {
 
   return recursiveGreaterCount(root, value);
 }
-
-int CountNodes(TreeNode *node) {
-  if (node == NULL)
-    return 0;
-  else
-    return CountNodes(node->left) + CountNodes(node->right) + 1;
-}
