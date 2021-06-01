@@ -51,20 +51,12 @@ int recursiveGreaterCount(TreeNode *node, ItemType value) {
     return 0;
   }
 
-  int count = 0;
-  if (node->info > value) {
-    count++;
-  }
+  int countLeft = recursiveGreaterCount(node->left, value);
+  int countRight = recursiveGreaterCount(node->right, value);
 
-  int size = recursiveLeafCount(node);
-
-  for (int i = 0; i < size; i++) {
-    count += recursiveGreaterCount(node->left, value) +
-             recursiveGreaterCount(node->right, value);
-    i++;
-  }
-  return count;
+  return (node->info > value ? 1 : 0) + countLeft + countRight;
 }
+
 // Pre:  tree has been initialized.
 // Post: Return value = the number of nodes in tree that
 //       contain values that are greater than value.
