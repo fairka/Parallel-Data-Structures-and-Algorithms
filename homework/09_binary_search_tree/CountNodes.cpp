@@ -28,11 +28,7 @@ int recursiveLeafCount(TreeNode *node) {
   }
 }
 
-int TreeType::CountLeaves() {
-  // TODO Implement function
-
-  return recursiveLeafCount(root);
-}
+int TreeType::CountLeaves() { return recursiveLeafCount(root); }
 
 int recursiveSingleCount(TreeNode *node) {
   if (node == NULL) {
@@ -40,9 +36,6 @@ int recursiveSingleCount(TreeNode *node) {
   }
 
   int res = 0;
-
-  // Condition to check if the
-  // node is having only one child
   if (node->left != NULL && node->right == NULL ||
       node->left == NULL && node->right != NULL) {
     res++;
@@ -51,17 +44,34 @@ int recursiveSingleCount(TreeNode *node) {
   return res;
 }
 
-// Calls recursive function SingleCount to count the number of
-//   nodes with only one child.
-int TreeType::CountSingleChildren() {
-  // TODO Implement function
-  return recursiveSingleCount(root);
-}
+int TreeType::CountSingleChildren() { return recursiveSingleCount(root); }
 
+int recursiveGreaterCount(TreeNode *node, ItemType value) {
+  if (node == NULL) {
+    return 0;
+  }
+
+  int count = 0;
+  if (node->left->info > value && node->right->info < value ||
+      node->left->info < value && node->right->info > value) {
+    count++;
+  }
+  count += recursiveGreaterCount(node->left, value) +
+           recursiveGreaterCount(node->right, value);
+  return count;
+}
 // Pre:  tree has been initialized.
 // Post: Return value = the number of nodes in tree that
 //       contain values that are greater than value.
 int TreeType::CountGreaterThan(ItemType value) {
   // TODO Implement function
-  return 0;
+
+  return recursiveGreaterCount(root, value);
+}
+
+int CountNodes(TreeNode *node) {
+  if (node == NULL)
+    return 0;
+  else
+    return CountNodes(node->left) + CountNodes(node->right) + 1;
 }
