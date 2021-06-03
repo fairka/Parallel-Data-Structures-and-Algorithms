@@ -2,15 +2,15 @@
 
 ## Walla Walla University -- Department of Computer Science
 
-_Name:_ ?
+_Name:_ Kaden Fairchild
 
 _Course:_ CPTR242
 
-_Assignment:_ ?
+_Assignment:_ Proj 3
 
-_Date:_ ?
+_Date:_ 6/8/2021
 
-_Estimated:_ ?
+_Estimated:_ 5 hr
 
 _Actual Time:_ ?
 
@@ -23,6 +23,6 @@ I hereby certify that the code included in this assignment is ENTIRELY my own or
 
 ---
 
-_Digital Signature:_ ???
+_Digital Signature:_ Kaden Fairchild
 
 (Type name or include signature image)

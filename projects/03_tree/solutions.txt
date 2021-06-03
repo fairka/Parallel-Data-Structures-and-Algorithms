@@ -1,0 +1,22 @@
+Student Test
+Menu options:
+  BuildTree <size>. Adds all earthquakes to the tree.
+  SmallestQuake <color>. Finds the smallest quake in the tree.
+  LargestQuake <color>. Finds the largest quake in the tree.
+  CountRange <min> <max> <color>. Finds the all quakes in a given range in the tree.
+  CountByLocation <location> <color>. Finds the all quakes for this location in the tree.
+  CountTreeInStyle <color1> <color2>. Style the tree and count all quakes in the tree.
+  Visualize. Builds the bridges visualization and prints the URL.
+  ResetVisualization. Reset the visualization of all tree nodes and edges.
+  ResetTree. Remove all items from the tree.
+  Quit. Quit application.
+  Menu. Display menu.
+100 quakes have been added.
+Tree was visualized.
+The smallest quake was a 0.97 in 22km E of Little Lake, CA.
+Tree was visualized.
+The largest quake was a 5.4 in 144 km NNW of Neiafu, Tonga.
+Tree was visualized.
+Tree has been resetted correctly
+Tree was visualized.
+Test Complete.

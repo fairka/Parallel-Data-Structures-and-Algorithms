@@ -1,0 +1,10 @@
+Menu
+BuildTree 100
+Visualize
+SmallestQuake green
+Visualize
+LargestQuake red
+Visualize
+ResetVisualization
+Visualize
+Quit
