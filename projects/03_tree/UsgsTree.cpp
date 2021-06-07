@@ -94,7 +94,7 @@ int UsgsTree::countByLocation(std::string location,
     } else if(root->getLocation() != location){
         return countByLocation(location, root->getRight(), color);
     } else{
-        return countByLocation(location, root->getLeft(),color)
+        return countByLocation(location, root->getLeft(),color);
     }
     return 0;
 }
