@@ -60,23 +60,23 @@ UsgsTree::getSmallestQuake(BSTElement<float, EarthquakeUSGS> *root,
 int UsgsTree::countRange(float min, float max,
                          BSTElement<float, EarthquakeUSGS> *root,
                          std::string color) {
-  // if(root == nullptr){
-  //     return 0;
-  // }
+  if(root == nullptr){
+      return 0;
+  }
 
-  // if(root->getValue() == min && root->getValue() == max){
-  //     root->getVisualizer()->setColor(color);
-  //     return 1;
-  // }
-  // if(root->getValue() <= max && root->getValue() >= min){
-  //     root->getVisualizer()->setColor(color);
-  //     return 1 + countRange(min, max, root->getLeft(), color) +
-  //                 countRange(min, max, root->getRight(),color);
-  // } else if(root->getValue() < min){
-  //     return countRange(min, max, root->getRight(), color);
-  // } else{
-  //     return countRange(min, max, root->getLeft(), color);
-  // }
+  if(root->getKey() == min && root->getKey() == max){
+      root->getVisualizer()->setColor(color);
+      return 1;
+  }
+  if(root->getKey() <= max && root->getKey() >= min){
+      root->getVisualizer()->setColor(color);
+      return 1 + countRange(min, max, root->getLeft(), color) +
+                  countRange(min, max, root->getRight(),color);
+  } else if(root->getKey() < min){
+      return countRange(min, max, root->getRight(), color);
+  } else{
+      return countRange(min, max, root->getLeft(), color);
+  }
   return 0;
 }
 
@@ -103,11 +103,13 @@ int UsgsTree::countWithStyle(BSTElement<float, EarthquakeUSGS> *root,
 void UsgsTree::resetVisualization(BSTElement<float, EarthquakeUSGS> *root) {
 
   if (root->getLeft() != nullptr) {
-    root->getLeft()->getVisualizer()->setColor(("#4682b4"));
+    root->getLeft()->getVisualizer()->setColor("steelblue");
+    root->getLeft()->getVisualizer()->setSize(10.0);
     resetVisualization(root->getLeft());
   }
   if (root->getRight() != nullptr) {
-    root->getRight()->getVisualizer()->setColor(("#4682b4"));
+    root->getRight()->getVisualizer()->setColor("steelblue");
+    root->getRight()->getVisualizer()->setSize(10.0);
     resetVisualization(root->getRight());
   }
 }

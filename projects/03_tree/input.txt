@@ -5,6 +5,8 @@ SmallestQuake green
 Visualize
 LargestQuake red
 Visualize
+CountRange 2.4 4.5 blue
+Visualize
 ResetVisualization
 Visualize
 Quit
