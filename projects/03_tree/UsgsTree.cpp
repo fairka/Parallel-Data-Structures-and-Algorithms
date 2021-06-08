@@ -89,14 +89,15 @@ int UsgsTree::countByLocation(std::string location,
   if (root == nullptr) {
     return 0;
   }
-  if (root->getValue().getLocation() == location) {
-    root->getVisualizer()->setColor(color);
-    return 1 + countByLocation(location, root->getLeft(), color) +
-           countByLocation(location, root->getRight(), color);
-  } else if (root->getValue().getLocation() != location) {
-    return countByLocation(location, root->getRight(), color) +
-           countByLocation(location, root->getLeft(), color);
+
+  if (root->getValue().getLocation().find(location) == std::string::npos) {
+    return root->getValue().getLocation().find(location);
+  } else if (root->getValue().getLocation().find(location) !=
+             std::string::npos) {
+    countByLocation(location, root->getLeft(), color) +
+        countByLocation(location, root->getRight(), color);
   }
+  return 0;
 }
 
 // Function: Updates all nodes and edges with a visualization.

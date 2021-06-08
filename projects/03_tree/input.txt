@@ -1,12 +1,6 @@
 Menu
 BuildTree 100
 Visualize
-SmallestQuake green
-Visualize
-LargestQuake red
-Visualize
-CountRange 2.4 4.5 blue
-Visualize
 CountByLocation Alaska pink
 Visualize
 ResetVisualization
