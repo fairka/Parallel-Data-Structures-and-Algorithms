@@ -1,9 +1,7 @@
 Menu
 BuildTree 100
 Visualize
-CountByLocation Alaska pink
-Visualize
-CountTreeInStyle blue green
+CountTreeInStyle Green Red
 Visualize
 ResetVisualization
 Visualize
