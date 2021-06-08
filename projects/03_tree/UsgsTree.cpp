@@ -97,7 +97,6 @@ int UsgsTree::countByLocation(std::string location,
     return countByLocation(location, root->getRight(), color) +
            countByLocation(location, root->getLeft(), color);
   }
-  return 0;
 }
 
 // Function: Updates all nodes and edges with a visualization.
