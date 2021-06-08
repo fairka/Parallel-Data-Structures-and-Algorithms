@@ -60,22 +60,22 @@ UsgsTree::getSmallestQuake(BSTElement<float, EarthquakeUSGS> *root,
 int UsgsTree::countRange(float min, float max,
                          BSTElement<float, EarthquakeUSGS> *root,
                          std::string color) {
-  if(root == nullptr){
-      return 0;
+  if (root == nullptr) {
+    return 0;
   }
 
-  if(root->getKey() == min && root->getKey() == max){
-      root->getVisualizer()->setColor(color);
-      return 1;
+  if (root->getKey() == min && root->getKey() == max) {
+    root->getVisualizer()->setColor(color);
+    return 1;
   }
-  if(root->getKey() <= max && root->getKey() >= min){
-      root->getVisualizer()->setColor(color);
-      return 1 + countRange(min, max, root->getLeft(), color) +
-                  countRange(min, max, root->getRight(),color);
-  } else if(root->getKey() < min){
-      return countRange(min, max, root->getRight(), color);
-  } else{
-      return countRange(min, max, root->getLeft(), color);
+  if (root->getKey() <= max && root->getKey() >= min) {
+    root->getVisualizer()->setColor(color);
+    return 1 + countRange(min, max, root->getLeft(), color) +
+           countRange(min, max, root->getRight(), color);
+  } else if (root->getKey() < min) {
+    return countRange(min, max, root->getRight(), color);
+  } else {
+    return countRange(min, max, root->getLeft(), color);
   }
   return 0;
 }
@@ -86,17 +86,18 @@ int UsgsTree::countRange(float min, float max,
 int UsgsTree::countByLocation(std::string location,
                               BSTElement<float, EarthquakeUSGS> *root,
                               std::string color) {
-    if(root == nullptr){
-  return 0;
-    } if(root->getLocation() == location){
-        root->getVisualizer()->setColor(color);
-        return 1 + countByLocation(location, root->getLeft(), color) + countByLocation(location, root->getRight(), color) ;
-    } else if(root->getLocation() != location){
-        return countByLocation(location, root->getRight(), color);
-    } else{
-        return countByLocation(location, root->getLeft(),color);
-    }
+  if (root == nullptr) {
     return 0;
+  }
+  if (root->getValue().getLocation() == location) {
+    root->getVisualizer()->setColor(color);
+    return 1 + countByLocation(location, root->getLeft(), color) +
+           countByLocation(location, root->getRight(), color);
+  } else if (root->getValue().getLocation() != location) {
+    return countByLocation(location, root->getRight(), color) +
+           countByLocation(location, root->getLeft(), color);
+  }
+  return 0;
 }
 
 // Function: Updates all nodes and edges with a visualization.

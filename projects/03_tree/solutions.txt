@@ -19,6 +19,8 @@ The largest quake was a 5.4 in 144 km NNW of Neiafu, Tonga.
 Tree was visualized.
 The tree has 14 quakes between 2.4 and 4.5.
 Tree was visualized.
+The Alaska has 0 quakes.
+Tree was visualized.
 Tree has been resetted correctly
 Tree was visualized.
 Test Complete.
