@@ -3,6 +3,8 @@ BuildTree 100
 Visualize
 CountByLocation Alaska pink
 Visualize
+CountTreeInStyle blue green
+Visualize
 ResetVisualization
 Visualize
 Quit
