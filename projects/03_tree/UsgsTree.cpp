@@ -106,14 +106,16 @@ int UsgsTree::countByLocation(std::string location,
 // Post: Returns the number of quakes in the BST and visualizes them.
 int UsgsTree::countWithStyle(BSTElement<float, EarthquakeUSGS> *root,
                              std::string colorVertex, std::string colorEdge) {
+                                 int count = 1;
   if (root == nullptr) {
     return 0;
   } else {
     root->getVisualizer()->setColor(colorVertex);
     root->getLinkVisualizer(root->getRight())->setColor(colorEdge);
     root->getLinkVisualizer(root->getLeft())->setColor(colorEdge);
-    return 1 + countWithStyle(root->getLeft(), colorVertex, colorEdge) +
-           countWithStyle(root->getRight(), colorVertex, colorEdge);
+    count += countWithStyle(root->getLeft(), colorVertex, colorEdge);
+    count += countWithStyle(root->getRight(), colorVertex, colorEdge);
+    return count;
   }
 }
 
