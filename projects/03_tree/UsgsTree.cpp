@@ -86,18 +86,19 @@ int UsgsTree::countRange(float min, float max,
 int UsgsTree::countByLocation(std::string location,
                               BSTElement<float, EarthquakeUSGS> *root,
                               std::string color) {
+
   if (root == nullptr) {
     return 0;
   }
-
-  if (root->getValue().getLocation().find(location) == std::string::npos) {
-    return root->getValue().getLocation().find(location);
-  } else if (root->getValue().getLocation().find(location) !=
+  if (root->getValue().getLocation().find(location) != std::string::npos) {
+    root->getVisualizer()->setColor(color);
+    return 1 + countByLocation(location, root->getLeft(), color) +
+           countByLocation(location, root->getRight(), color);
+  } else if (root->getValue().getLocation().find(location) ==
              std::string::npos) {
-    countByLocation(location, root->getLeft(), color) +
-        countByLocation(location, root->getRight(), color);
+    return countByLocation(location, root->getRight(), color) +
+           countByLocation(location, root->getLeft(), color);
   }
-  return 0;
 }
 
 // Function: Updates all nodes and edges with a visualization.
